@@ -33,14 +33,26 @@
  let familyB: (Human?, Pet?) = (nil, dog)
  let familyC: (Human?, Pet?) = (nil, nil)
  let familyD: (Human?, Pet?) = (hellen, cat)
+ let familyE: (Animal?, Animal?) = (nil, dog)
  
- let family: (Animal?, Animal?) = (nil, dog)
- switch family {
- case let (variable?, nil), let (nil, variable?):
-    print("only have \(variable.name)")
- case let (human?, pet?):
-    print("Have both \(human.name) and \(pet.name)")
- case (nil, nil):
-    print("Empty family")
+ let families: [(Animal?, Animal?)] = 
+    [
+        familyA, 
+        familyB, 
+        familyC, 
+        familyD, 
+        familyE
+    ]
+ 
+ families.forEach { 
+    switch $0 {
+    case let (variable?, nil), let (nil, variable?):
+       print("only have \(variable.name)")
+    case let (human?, pet?):
+       print("Have both \(human.name) and \(pet.name)")
+    case (nil, nil):
+       print("Empty family")
+    }
+    
  }
  

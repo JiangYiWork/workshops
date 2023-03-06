@@ -33,3 +33,5 @@ print(String(data: data, encoding: .utf8)!)
 //    "age" : 17
 //}
 
+let newStudent = Student(name: "a", age: 12)
+print(newStudent.name)
